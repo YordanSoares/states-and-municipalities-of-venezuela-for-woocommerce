@@ -15,8 +15,8 @@
 This plugins allows you to choose the States and Municipalities of Venezuela into the WooCommerce options.
 
 ## Screenshots
-
 1. See the plugin in action
+
 ![International telephone input](https://raw.githubusercontent.com/YordanSoares/states-and-municipalities-of-venezuela-for-woocommerce/master/assets/screenshot-1.gif)
 
 ## Installation
