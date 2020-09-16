@@ -11,9 +11,9 @@
  * Text Domain: states-and-municipalities-of-venezuela-for-woocommerce
  * Domain Path: /languages
  * Requires at least: 4.0 +
- * Tested up to: 5.4.1
+ * Tested up to: 5.5
  * WC requires at least: 3.0.x
- * WC tested up to: 4.0.1
+ * WC tested up to: 4.5
 */
 
 // Exit if file is open directly
