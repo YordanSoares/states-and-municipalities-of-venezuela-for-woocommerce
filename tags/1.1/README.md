@@ -2,17 +2,19 @@
 Contributors: yordansoares
 Tags: venezuelan states and municipalities, estados y municipios de venezuela
 Donate link: https://yordansoar.es/
-Requires at least: 4.7.14
-Tested up to: 5.4.1
+Requires at least: 4.6
+Tested up to: 5.6
 Requires PHP: 7.0
 Stable tag: 1.1
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Venezuelan States and Municipalities for WooCommerce.
 
 == Description ==
-This plugins allows you to choose the States and Municipalities of Venezuela into the WooCommerce Options.
+This plugin allows you to choose the **States and Municipalities of Venezuela** as a dropdown menu in the **WooCommerce address forms**. It also makes filterable the **States** and **Municipalities** fields to enhance the **user experience**.
+
+Additionally it adds the **States** to the **Shipping zones** (The Municipalities are not compatible with this area).
 
 == Installation ==
 = Automatic installation =
