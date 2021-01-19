@@ -10,7 +10,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: states-and-municipalities-of-venezuela-for-woocommerce
  * Domain Path: /languages
- * Version: 1.1
+ * Version: 1.2
  * Requires at least: 4.6
  * Requires PHP: 7.0
  * WC requires at least: 3.0.x
@@ -23,19 +23,24 @@ if (!defined('ABSPATH')) {
 }
 
 // Check if WooCommerce is active
-if (!function_exists('smvw_is_woocommerce_active')) {
-	function smvw_is_woocommerce_active()
-	{
-		$active_plugins = (array) get_option('active_plugins', array());
-		// Check if the WP install is multisite
-		if (is_multisite()) {
-			$active_plugins = array_merge($active_plugins, get_site_option('active_sitewide_plugins', array()));
-		}
-		return in_array('woocommerce/woocommerce.php', $active_plugins) || array_key_exists('woocommerce/woocommerce.php', $active_plugins) || class_exists('WooCommerce');
+function smvw_is_woocommerce_active() {
+	$active_plugins = (array) get_option('active_plugins', array());
+	// Check if the WP install is multisite
+	if (is_multisite()) {
+		$active_plugins = array_merge($active_plugins, get_site_option('active_sitewide_plugins', array()));
 	}
+	return in_array('woocommerce/woocommerce.php', $active_plugins) || array_key_exists('woocommerce/woocommerce.php', $active_plugins) || class_exists('WooCommerce');
 }
 
-if (smvw_is_woocommerce_active()) {
+// Check if States, Cities, and Places for WooCommerce is active
+function smvw_is_states_cities_and_places_wc_active() {
+	if (in_array('states-cities-and-places-for-woocommerce/states-cities-and-places-for-woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+		$is_active = true;
+	}
+	return $is_active;
+}
+
+if (smvw_is_woocommerce_active() && !smvw_is_states_cities_and_places_wc_active() ) {
 	// Prepare the init function
 	function smvw_init()
 	{
@@ -59,8 +64,7 @@ if (smvw_is_woocommerce_active()) {
 		add_filter('woocommerce_states', 'smvw_venezuelan_states');
 
 		// Change the order of State and City fields to have more sense with the steps of form
-		function smvw_change_state_and_city_order($fields)
-		{
+		function smvw_change_state_and_city_order($fields) {
 
 			$fields['state']['priority'] = 70;
 			$fields['state']['label'] = __('State', 'states-and-municipalities-of-venezuela-for-woocommerce');
@@ -70,25 +74,42 @@ if (smvw_is_woocommerce_active()) {
 			return $fields;
 		}
 		add_filter('woocommerce_default_address_fields', 'smvw_change_state_and_city_order');
-		// If WooCommerce isn't active...
-
-	}
-
+	}	
 	// Fires the init function
 	add_action('plugins_loaded', 'smvw_init', 10);
 	
-} else {
+	// if States, Cities, and Places for WooCommerce is active
+} elseif ( smvw_is_states_cities_and_places_wc_active() ) {
+	
+	function smvw_is_states_cities_and_places_wc_deactivation() 	{
+		// ...shows a notice explaining why the plugin deactivates
+		echo '
+		<div class="notice notice-error is-dismissible">
+		<p>' . wp_sprintf(
+			// translators: 1. <strong>, 1. </strong>
+			__('%1$sStates and Municipalities of Venezuela for WooCommerce%2$s is not necessary if %1$sStates, Cities, and Places for WooCommerce%2$s is installed, as this includes the locations of Venezuela. Therefore, the plugin has been deactivated.', 'states-and-municipalities-of-venezuela-for-woocommerce'), '<strong>', '</strong>' ) . '</p>
+			</div>
+			';
+			// And deactivate the plugin until WooCommerce is active
+			deactivate_plugins(plugin_basename(__FILE__));
+		}
+		add_action('admin_notices', 'smvw_is_states_cities_and_places_wc_deactivation');
 
-	function smvw_woocommerce_required()
-	{
+	} else {
+
+	// If WooCommerce isn't active...
+	function smvw_woocommerce_required() 	{
 		// ...shows a notice to asking for WooCommerce activation
 		echo '
 		<div class="notice notice-error is-dismissible">
-		<p>' . wp_sprintf(__('%sStates and Municipalities of Venezuela for WooCommerce%s plugin requires %sWooCommerce%s activated. The plugin was deactivated until you active %sWooCommerce%s', 'states-and-municipalities-of-venezuela-for-woocommerce'), '<strong>', '</strong>', '<strong>', '</strong>', '<strong>', '</strong>') . '</p>
+		<p>' . wp_sprintf(
+			// translators: 1. <strong>, 1. </strong>
+			__('%1$sStates and Municipalities of Venezuela for WooCommerce%2$s requires %1$sWooCommerce%2$s activated. The plugin was deactivated until you active %1$sWooCommerce%2$s', 'states-and-municipalities-of-venezuela-for-woocommerce'), '<strong>', '</strong>' ) . '</p>
 		</div>
 		';
 		// And deactivate the plugin until WooCommerce is active
 		deactivate_plugins(plugin_basename(__FILE__));
 	}
 	add_action('admin_notices', 'smvw_woocommerce_required');
+
 }
