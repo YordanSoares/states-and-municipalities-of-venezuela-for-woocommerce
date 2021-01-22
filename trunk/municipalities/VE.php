@@ -397,4 +397,4 @@
 );
 
 // Use this filter to handle the Municipalities of Venezuela
-$municipalities['VE'] = apply_filters('smvw_custom_municipalities_ve', $municipalities['VE']);
+$municipalities = apply_filters('smvw_custom_municipalities_ve', $municipalities);

@@ -39,7 +39,7 @@ function smvw_venezuelan_states($states) {
   );
 
   // Use this filter to handle the States of Venezuela
-  $states['VE'] = apply_filters('smvw_custom_states_ve', $states['VE']);
+  $states = apply_filters('smvw_custom_states_ve', $states);
   
   return $states;
 }
