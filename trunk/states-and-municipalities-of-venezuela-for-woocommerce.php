@@ -14,7 +14,7 @@
  * Requires at least: 4.6
  * Requires PHP: 7.0
  * WC requires at least: 3.0.x
- * WC tested up to: 4.9
+ * WC tested up to: 5.0
 */
 
 // Exit if file is open directly
