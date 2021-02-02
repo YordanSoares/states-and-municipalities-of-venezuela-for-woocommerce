@@ -42,8 +42,7 @@ function smvw_is_states_cities_and_places_wc_active() {
 
 if (smvw_is_woocommerce_active() && !smvw_is_states_cities_and_places_wc_active() ) {
 	// Prepare the init function
-	function smvw_init()
-	{
+	function smvw_init() {
 		// Define the constants for plugin URL and PATH
 		define('SMVW_PLUGIN_URL', plugin_dir_url(__FILE__));
 		define('SMVW_PLUGIN_PATH', plugin_dir_path(__FILE__));
@@ -54,7 +53,7 @@ if (smvw_is_woocommerce_active() && !smvw_is_states_cities_and_places_wc_active(
 		// Get the Class WC_Venezuelan_Municipalities_Select
 		require_once('includes/class-wc-venezuelan-municipalities-select.php');
 
-		// Instantiate the Class WC_Venezuelan_Municipalities_Select in $_GLOBALS variable
+		// Instantiate the WC_Venezuelan_Municipalities_Select class in $_GLOBALS variable
 		$GLOBALS['wc_municipality_select'] = new WC_Venezuelan_Municipalities_Select(__FILE__);
 
 		// Get the States of Venezuela
@@ -62,18 +61,9 @@ if (smvw_is_woocommerce_active() && !smvw_is_states_cities_and_places_wc_active(
 
 		// Insert the States into WooCommerce Options
 		add_filter('woocommerce_states', 'smvw_venezuelan_states');
-
-		// Change the order of State and City fields to have more sense with the steps of form
-		function smvw_change_state_and_city_order($fields) {
-
-			$fields['state']['priority'] = 70;
-			$fields['state']['label'] = __('State', 'states-and-municipalities-of-venezuela-for-woocommerce');
-			$fields['city']['priority'] = 80;
-			$fields['city']['label'] = __('Municipality', 'states-and-municipalities-of-venezuela-for-woocommerce');
-
-			return $fields;
-		}
-		add_filter('woocommerce_default_address_fields', 'smvw_change_state_and_city_order');
+		
+		// Instantiate the WC_Venezuela_Custom_Locale() class
+		require_once('includes/class-wc-venezuela-locale.php');
 	}	
 	// Fires the init function
 	add_action('plugins_loaded', 'smvw_init', 10);
