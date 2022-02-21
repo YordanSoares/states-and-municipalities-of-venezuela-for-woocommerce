@@ -5,7 +5,7 @@
 * Tags: venezuelan states and municipalities, estados y municipios de venezuela
 * Donate link: https://yordansoar.es/
 * Requires at least: 4.6
-* Tested up to: 5.6
+* Tested up to: 5.9
 * Requires PHP: 7.0
 * Stable tag: 1.1
 * License: GPL v2 or later
