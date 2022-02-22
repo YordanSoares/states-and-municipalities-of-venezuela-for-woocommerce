@@ -8,19 +8,21 @@
  * - https://es.wikipedia.org/wiki/Anexo:Municipios_de_Venezuela
  */
 
- global $municipalities;
+global $municipalities;
 
-  $municipalities['VE'] = array(
-  'AM' => array(
-    'Municipio Alto Orinoco (La Esmeralda)',
-    'Municipio Atabapo (San Fernando de Atabapo)',
-    'Municipio Atures (Puerto Ayacucho)',
-    'Municipio Autana (Isla Ratón)',
-    'Municipio Manapiare (San Juan de Manapiare)',
-    'Municipio Maroa (Maroa)',
-    'Municipio Río Negro (San Carlos de Río Negro)'
-  ),
-  'AN' => array(
+$municipalities['VE'] = array(
+	// Amazonas
+	'AM' => array(
+		'Municipio Alto Orinoco (La Esmeralda)',
+		'Municipio Atabapo (San Fernando de Atabapo)',
+		'Municipio Atures (Puerto Ayacucho)',
+		'Municipio Autana (Isla Ratón)',
+		'Municipio Manapiare (San Juan de Manapiare)',
+		'Municipio Maroa (Maroa)',
+		'Municipio Río Negro (San Carlos de Río Negro)'
+	),
+	// Anzoátegui
+	'AN' => array(
 		'Municipio Anaco (Anaco)',
 		'Municipio Aragua (Aragua de Barcelona)',
 		'Municipio Bolívar (Barcelona)',
@@ -43,7 +45,8 @@
 		'Municipio Simón Rodriguez (El Tigre)',
 		'Municipio Sotillo (Puerto La Cruz)'
 	),
-  'AP' => array(
+	// Apure
+	'AP' => array(
 		'Municipio Achaguas (Achaguas)',
 		'Municipio Biruaca (Biruaca)',
 		'Municipio Muñoz (Bruzual)',
@@ -52,7 +55,8 @@
 		'Municipio Rómulo Gallegos (Elorza)',
 		'Municipio San Fernando (San Fernando de Apure)'
 	),
-  'AR' => array(
+	// Aragua
+	'AR' => array(
 		'Municipio Bolívar (San Mateo)',
 		'Municipio Camatagua(Camatagua)',
 		'Municipio Francisco Linares Alcántara (Santa Rita)',
@@ -72,7 +76,8 @@
 		'Municipio Urdaneta (Barbacoas)',
 		'Municipio Zamora (Villa de Cura)'
 	),
-  'BA' => array(
+	// Barinas
+	'BA' => array(
 		'Municipio Alberto Arvelo Torrealba (Sabaneta)',
 		'Municipio Andrés Eloy Blanco (El Cantón)',
 		'Municipio Antonio José de Sucre (Socopó)',
@@ -86,7 +91,8 @@
 		'Municipio Rojas (Libertad)',
 		'Municipio Sosa (Ciudad de Nutrias)'
 	),
-  'BO' => array(
+	// Bolívar
+	'BO' => array(
 		'Municipio Caroní (Ciudad Guayana)',
 		'Municipio Cedeño (Caicara del Orinoco)',
 		'Municipio El Callao (El Callao)',
@@ -99,7 +105,8 @@
 		'Municipio Sucre (Maripa)',
 		'Municipio Padre Pedro Chen (El Palmar)'
 	),
-  'CA' => array(
+	// Carabobo
+	'CA' => array(
 		'Municipio Bejuma (Bejuma)',
 		'Municipio Carlos Arvelo (Güigüe)',
 		'Municipio Diego Ibarra (Mariara)',
@@ -115,7 +122,8 @@
 		'Municipio San Joaquín (San Joaquín)',
 		'Municipio Valencia (Valencia)'
 	),
-  'CO' => array(
+	// Cojedes
+	'CO' => array(
 		'Municipio Anzoátegui (Cojedes)',
 		'Municipio El Pao de San Juan Bautista (El Pao)',
 		'Municipio Falcón (Tinaquillo)',
@@ -126,16 +134,19 @@
 		'Municipio San Carlos de Austria (San Carlos)',
 		'Municipio Tinaco (Tinaco)'
 	),
-  'DE' => array(
+	// Delta Amacuro
+	'DE' => array(
 		'Municipio Antonio Díaz Curiapo (Curiapo)',
 		'Municipio Casacoima (Sierra Imataca)',
 		'Municipio Pedernales (Pedernales)',
 		'Municipio Tucupita (Tucupita)'
 	),
-  'DC' => array(
+	// Distrito Capital
+	'DC' => array(
 		'Municipio Libertador (Caracas)'
 	),
-  'FA' => array(		
+	// Falcón
+	'FA' => array(		
 		'Municipio Acosta (San Juan de los Cayos)',
 		'Municipio Bolívar (San Luis)',
 		'Municipio Buchivacoa (Capatárida)',
@@ -162,7 +173,8 @@
 		'Municipio Urumaco (Urumaco)',
 		'Municipio Zamora (Puerto Cumarebo)'
 	),
-  'GU' => array(		
+	// Guárico
+	'GU' => array(		
 		'Municipio Esteros de Camaguan(Camaguan)',
 		'Municipio Chaguaramas(Chaguaramas)',
 		'Municipio El Socorro (El Socorro)',
@@ -179,7 +191,8 @@
 		'Municipio San José de Guaribe (San José de Guaribe)',
 		'Municipio Santa María de Ipire (Santa María de Ipire)'
 	),
-  'LA' => array(		
+	// Lara
+	'LA' => array(		
 		'Municipio Andrés Eloy Blanco (Sanare)',
 		'Municipio Crespo (Duaca)',
 		'Municipio Iribarren (Barquisimeto)',
@@ -190,10 +203,12 @@
 		'Municipio Torres (Carora)',
 		'Municipio Urdaneta (Siquisique)'
 	),
-  'LG' => array(
+	// La Guaira
+	'LG' => array(
 		'Municipio Vargas (La Guaira)'
 	),
-  'ME' => array(
+	// Mérida
+	'ME' => array(
 		'Municipio Alberto Adriani (El Vigía)',
 		'Municipio Andrés Bello (La Azulita)',
 		'Municipio Antonio Pinto Salinas (Santa Cruz de Mora)',
@@ -218,7 +233,8 @@
 		'Municipio Tulio Febres Cordero (Nueva Bolivia)',
 		'Municipio Zea (Zea)'
 	),
-  'MI' => array(
+	// Miranda
+	'MI' => array(
 		'Municipio Acevedo (Caucagua)',
 		'Municipio Andrés Bello (San José de Barlovento)',
 		'Municipio Baruta (Baruta)',
@@ -241,7 +257,8 @@
 		'Municipio Urdaneta (Cúa)',
 		'Municipio Zamora (Guatire)'
 	),
-  'MO' => array(
+	// Monagas
+	'MO' => array(
 		'Municipio Acosta (San Antonio de Capayacuar)',
 		'Municipio Aguasay (Aguasai)',
 		'Municipio Bolíva',
@@ -256,7 +273,8 @@
 		'Municipio Sotillo (Barrancas del Orinco)',
 		'Municipio Uracoa (Uracoa)'
 	),
-  'NE' => array(
+	// Nueva Esparta
+	'NE' => array(
 		'Municipio Antolín del Campo (La Plaza de Paraguachí)',
 		'Municipio Arismendi (La Asunción)',
 		'Municipio Díaz (San Juan Bautista)',
@@ -269,7 +287,8 @@
 		'Municipio Tubores (Punta de Piedras)',
 		'Municipio Villalba (San Pedro de Coche)'
 	),
-  'PO' => array(
+	// Portuguesa
+	'PO' => array(
 		'Municipio Agua Blanca (Agua Blanca)',
 		'Municipio Araure (Araure)',
 		'Municipio Esteller (Píritu)',
@@ -285,7 +304,8 @@
 		'Municipio Sucre (Biscucuy)',
 		'Municipio Turén (Villa Bruzual)'
 	),
-  'SU' => array(
+	// Sucre
+	'SU' => array(
 		'Municipio Andrés Eloy Blanco (Casanay)',
 		'Municipio Andrés Mata (San José de Aerocuar)',
 		'Municipio Arismendi (Río Caribe)',
@@ -302,7 +322,8 @@
 		'Municipio Sucre (Cumaná)',
 		'Municipio Valdez (Güiria)'
 	),
-  'TA' => array(
+	// Táchira
+	'TA' => array(
 		'Municipio Andrés Bello(Cordero)',
 		'Municipio Antonio Rómulo Costa (Las Mesas)',
 		'Municipio Ayacucho (El Colón)',
@@ -333,7 +354,8 @@
 		'Municipio Torbes (San Josesito)',
 		'Municipio Uribante (Pregonero)'
 	),
-  'TR' => array(
+	// Trujillo
+	'TR' => array(
 		'Municipio Andrés Bello (Santa Isabel)',
 		'Municipio Boconó (Boconó)',
 		'Municipio Bolívar (Sabana Grande)',
@@ -355,7 +377,8 @@
 		'Municipio Urdaneta (La Quebrada)',
 		'Municipio Valera (Valera)'
 	),
-  'YA' => array(
+	// Yaracuy
+	'YA' => array(
 		'Municipio Aristides Bastidas (San Pablo)',
 		'Municipio Bolívar (Aroa)',
 		'Municipio Bruzual (Chivacoa)',
@@ -371,7 +394,8 @@
 		'Municipio Urachiche (Urachiche)',
 		'Municipio Veroes (Farriar)'
 	),
-  'ZU' => array(
+	// Zulia
+	'ZU' => array(
 		'Municipio Almirante Padilla (El Toro)',
 		'Municipio Baralt (San Timoteo)',
 		'Municipio Cabimas (Cabimas)',
